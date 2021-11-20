@@ -1,0 +1,18 @@
+.user{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    margin: 25px 20px;
+    border: none;
+    box-shadow: lightgray 0px 0px 10px 5px;
+    transition: all 200ms ease-in-out
+}
+
+.user:hover{
+    transform: scale(1.01)
+}
+
+.user__image > img{
+    object-fit: contain;
+    height: 200px;
+}
