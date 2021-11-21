@@ -4,33 +4,39 @@ import 'antd/dist/antd.css'
 import User from './components/User';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 function App() {
   const [users, setUsers] = useState([])
-  console.log("da");
-  useEffect(() => {
-    async function get_all_users(params) {
-      try {
-        const request = await axios.get('https://randomuser.me/api/?page=1&results=20')
-        console.log('😁😁', request.data.results);
-        setUsers(request.data.results)
-      } catch (error) {
-        console.log('error on loading data❌❌❌');
-      }
+  const [numpage, setnumpage] = useState(1)
+
+  async function get_all_users() {
+    try {
+      const request = await axios.get(`https://randomuser.me/api/?page=${numpage}&results=10`)
+      console.log(request.data.results);
+      setUsers(users.concat(request.data.results))
+    } catch (error) {
+      console.log('error on loading data❌❌❌');
     }
+  }
 
+  useEffect(() => {
     get_all_users()
+  }, [numpage])
 
-  }, [])
+
   return (
     <div className="app">
-      <div className='main__leftside'>a</div>
+      {/* <button onClick={() => setnumpage(e => e + 1)} >load more</button> */}
+      <div className='main__leftside'></div>
       <div className='main__users'>
-        {users.map((user, index)=>(
-          <User key={index} user={user} />
-        ))}
+        <InfiniteScroll dataLength={users.length} next={() => setnumpage(e => e + 1)} hasMore={true}>
+          {users?.map((user, index) => (
+            <User key={index} user={user} />
+          ))}
+        </InfiniteScroll>
       </div>
-      <div className='main__rightside'>a</div>
+      <div className='main__rightside'></div>
     </div>
   );
 }

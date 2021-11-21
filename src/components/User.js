@@ -17,7 +17,7 @@ const User = ({ user }) => {
 
             <div className='user__image' >
                 <img alt='user__photo' src={user.picture.large} />
-                <Button onClick={() => setVisible(true)}>More infos</Button>
+                <Button type='primary' onClick={() => setVisible(true)}>More infos</Button>
                 <Modal
                     title="More infos about this user"
                     centered

@@ -3,9 +3,9 @@
 }
 
 .main__leftside, .main__rightside{
-  flex: 0.2;
+  flex: 0.25;
 }
 
 .main__users{
-  flex: 0.6;
+  flex: 0.5;
 }

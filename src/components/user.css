@@ -1,6 +1,7 @@
 .user{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 15px 20px;
     margin: 25px 20px;
     border: none;
@@ -16,8 +17,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 .user__image > img{
     object-fit: contain;
     height: 200px;
+    margin-bottom: 15px;
+}
+
+
+.ant-modal-footer{
+    display: none !important;
 }
