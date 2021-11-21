@@ -9,9 +9,14 @@
 }
 
 .user:hover{
-    transform: scale(1.01)
+    transform: scale(1.03)
 }
-
+.user__image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .user__image > img{
     object-fit: contain;
     height: 200px;

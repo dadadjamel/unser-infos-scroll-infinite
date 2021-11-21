@@ -4,7 +4,6 @@
 
 .main__leftside, .main__rightside{
   flex: 0.2;
-  background-color: aqua;
 }
 
 .main__users{
