@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import 'antd/dist/antd.css'
 import User from './components/User';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
