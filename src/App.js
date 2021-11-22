@@ -21,6 +21,7 @@ function App() {
   }
 
   useEffect(() => {
+    // run this function each time the number of page changes
     get_all_users()
   }, [numpage])
 

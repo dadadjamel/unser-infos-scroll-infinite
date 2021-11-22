@@ -4,9 +4,7 @@ import './user.css'
 
 const User = ({ user }) => {
     const [visible, setVisible] = useState(false);
-    function modal(params) {
 
-    }
     return (
         <div className='user' >
             <div className='user__infos' >
