@@ -20,10 +20,14 @@ function App() {
     }
   }
 
+
+
   useEffect(() => {
     // run this function each time the number of page changes
     get_all_users()
   }, [numpage])
+
+
 
 
   return (
@@ -33,7 +37,7 @@ function App() {
       <div className='main__users'>
         <InfiniteScroll dataLength={users.length} next={() => setnumpage(e => e + 1)} hasMore={true}>
           {users?.map((user, index) => (
-            <User key={index} user={user} />
+            <User data-testid="usertest"  key={index} user={user} />
           ))}
         </InfiniteScroll>
       </div>
